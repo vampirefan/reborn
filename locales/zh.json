@@ -1,0 +1,81 @@
+{
+  "game": {
+    "title": "轮回",
+    "subtitle": "万世轮转，历史重生",
+    "newGame": "开始新生",
+    "continue": "继续旅程",
+    "rebirth": "再入轮回",
+    "back": "返回",
+    "events": "事件",
+    "clickToContinue": "点击继续"
+  },
+  "hud": {
+    "era": "时代",
+    "age": "年龄",
+    "health": "生命",
+    "location": "地点",
+    "body": "体魄",
+    "mind": "心智",
+    "charisma": "魅力",
+    "luck": "气运"
+  },
+  "settings": {
+    "title": "设置",
+    "language": "语言",
+    "llmProvider": "AI 文本生成",
+    "imageProvider": "AI 图像生成",
+    "provider": "服务商",
+    "apiKey": "API 密钥",
+    "apiKeyPlaceholder": "输入你的 API Key",
+    "model": "模型",
+    "baseUrl": "接口地址",
+    "display": "显示设置",
+    "textSpeed": "文字速度",
+    "narrativeLength": "叙事长度",
+    "autoSave": "自动存档",
+    "disabled": "禁用",
+    "slow": "慢速",
+    "normal": "正常",
+    "fast": "快速",
+    "instant": "即时",
+    "short": "简短",
+    "medium": "适中",
+    "long": "详细"
+  },
+  "history": {
+    "pastLives": "前世今生",
+    "achievements": "成就",
+    "totalLives": "轮回次数",
+    "totalYears": "总历年",
+    "uniqueEras": "经历时代",
+    "oldestAge": "最长寿命",
+    "noLives": "尚无前世记录。开始你的第一次轮回吧。"
+  },
+  "transitions": {
+    "birthMessage": "一缕灵魂降临人间...",
+    "deathMessage": "生命的旅途到此为止..."
+  },
+  "errors": {
+    "noApiKey": "请先在设置中配置 API 密钥",
+    "noApiKeyHint": "配置 API 密钥可获得无限 AI 生成内容，当前使用预置剧本",
+    "connectionFailed": "连接失败，请检查设置",
+    "generationFailed": "生成失败，请重试"
+  },
+  "achievements": {
+    "longevity": "长命百岁",
+    "longevityDesc": "活过80岁",
+    "reincarnator": "轮回者",
+    "reincarnatorDesc": "完成10次轮回",
+    "timeTraveler": "时空旅人",
+    "timeTravelerDesc": "经历5个不同的历史时代"
+  },
+  "knowledge": {
+    "title": "历史百科",
+    "encyclopedia": "百科",
+    "timeline": "时间线",
+    "event": "历史事件",
+    "npcsMet": "遇见",
+    "noEncyclopedia": "详细历史背景仅在预置剧本中可用",
+    "journeyBegins": "你的旅程刚刚开始..."
+  }
+}

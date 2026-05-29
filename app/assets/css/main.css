@@ -1,0 +1,88 @@
+:root {
+  /* Background colors */
+  --color-bg-deep: #0a0a0f;
+  --color-bg-mid: #151520;
+  --color-bg-surface: #1a1a2a;
+
+  /* Text colors */
+  --color-text-primary: #e8e6e3;
+  --color-text-secondary: #a0a0b0;
+  --color-text-muted: #606070;
+
+  /* Accent */
+  --color-accent: #c8a45c;
+
+  /* UI elements */
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-hud-bg: rgba(10, 10, 15, 0.75);
+  --color-choice-bg: rgba(255, 255, 255, 0.03);
+  --color-choice-border: rgba(255, 255, 255, 0.08);
+  --color-choice-hover: rgba(200, 164, 92, 0.08);
+
+  /* Health */
+  --color-health-good: #5cb85c;
+  --color-health-warn: #d4a843;
+  --color-health-critical: #c0392b;
+
+  /* Font sizes */
+  --font-size-narrative: 1.05rem;
+  --font-size-choice: 0.95rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--color-bg-deep);
+  color: var(--color-text-primary);
+  overflow-x: hidden;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Selection */
+::selection {
+  background: var(--color-accent);
+  color: var(--color-bg-deep);
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+button {
+  font-family: inherit;
+}
+
+input, select {
+  font-family: inherit;
+}

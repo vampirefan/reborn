@@ -1,0 +1,81 @@
+{
+  "game": {
+    "title": "Reborn",
+    "subtitle": "Live through history, again and again",
+    "newGame": "New Life",
+    "continue": "Continue",
+    "rebirth": "Enter the Cycle Anew",
+    "back": "Back",
+    "events": "Events",
+    "clickToContinue": "Click to continue"
+  },
+  "hud": {
+    "era": "Era",
+    "age": "Age",
+    "health": "Health",
+    "location": "Location",
+    "body": "Body",
+    "mind": "Mind",
+    "charisma": "Charisma",
+    "luck": "Luck"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "llmProvider": "AI Text Generation",
+    "imageProvider": "AI Image Generation",
+    "provider": "Provider",
+    "apiKey": "API Key",
+    "apiKeyPlaceholder": "Enter your API key",
+    "model": "Model",
+    "baseUrl": "Base URL",
+    "display": "Display",
+    "textSpeed": "Text Speed",
+    "narrativeLength": "Narrative Length",
+    "autoSave": "Auto Save",
+    "disabled": "Disabled",
+    "slow": "Slow",
+    "normal": "Normal",
+    "fast": "Fast",
+    "instant": "Instant",
+    "short": "Short",
+    "medium": "Medium",
+    "long": "Long"
+  },
+  "history": {
+    "pastLives": "Past Lives",
+    "achievements": "Achievements",
+    "totalLives": "Total Lives",
+    "totalYears": "Years Lived",
+    "uniqueEras": "Unique Eras",
+    "oldestAge": "Oldest Age",
+    "noLives": "No past lives yet. Begin your first cycle."
+  },
+  "transitions": {
+    "birthMessage": "A soul enters the world...",
+    "deathMessage": "The journey ends here..."
+  },
+  "errors": {
+    "noApiKey": "Please configure your API key in Settings first",
+    "noApiKeyHint": "Add an API key for unlimited AI-generated content. Currently using pre-built scenarios.",
+    "connectionFailed": "Connection failed. Check your settings.",
+    "generationFailed": "Generation failed. Please retry."
+  },
+  "achievements": {
+    "longevity": "Long-Lived",
+    "longevityDesc": "Live past age 80",
+    "reincarnator": "Reincarnator",
+    "reincarnatorDesc": "Complete 10 lives",
+    "timeTraveler": "Time Traveler",
+    "timeTravelerDesc": "Experience 5 different historical eras"
+  },
+  "knowledge": {
+    "title": "Historical Archive",
+    "encyclopedia": "Encyclopedia",
+    "timeline": "Timeline",
+    "event": "Historical Event",
+    "npcsMet": "Met",
+    "noEncyclopedia": "Detailed background available in pre-built scenarios",
+    "journeyBegins": "Your journey has just begun..."
+  }
+}
