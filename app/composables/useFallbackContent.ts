@@ -1,5 +1,5 @@
 import { useSettingsStore } from '~/stores/settingsStore'
-import { getRandomScenario, getScenarioById } from '~/data/scenarios'
+import { useScenarioRepository } from '~/composables/useScenarioRepository'
 import { getImageByTag } from '~/data/images'
 import type { PreBuiltScenario, ScenarioNode } from '~/data/types'
 
@@ -15,13 +15,14 @@ const state: FallbackState = {
 
 export function useFallbackContent() {
   const settingsStore = useSettingsStore()
+  const repository = useScenarioRepository()
 
   function shouldUseFallback(): boolean {
     return !settingsStore.hasLLMKey()
   }
 
   function startFallbackLife() {
-    const scenario = getRandomScenario()
+    const scenario = repository.getRandom()
     state.currentScenario = scenario
     state.currentNodeId = scenario.startNodeId
     return {
@@ -31,7 +32,7 @@ export function useFallbackContent() {
   }
 
   function resumeFallbackLife(scenarioId: string, nodeId: string) {
-    const scenario = getScenarioById(scenarioId)
+    const scenario = repository.getById(scenarioId)
     if (!scenario) return null
     state.currentScenario = scenario
     state.currentNodeId = nodeId

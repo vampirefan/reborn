@@ -24,7 +24,16 @@ export default defineNuxtConfig({
     '~/assets/css/main.css',
     '~/assets/css/typography.css',
     '~/assets/css/transitions.css',
+    '@vue-flow/core/dist/style.css',
+    '@vue-flow/core/dist/theme-default.css',
+    '@vue-flow/controls/dist/style.css',
+    '@vue-flow/minimap/dist/style.css',
   ],
+
+  routeRules: {
+    '/admin/**': { ssr: false },
+    '/admin': { ssr: false },
+  },
 
   app: {
     head: {

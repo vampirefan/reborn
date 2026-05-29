@@ -10,7 +10,14 @@ import { revolutionParis } from './revolution-paris'
 import { wwiiCivilian } from './wwii-civilian'
 import type { PreBuiltScenario } from '../types'
 
-export const ALL_SCENARIOS: PreBuiltScenario[] = [
+/**
+ * Frozen list of built-in scenarios shipped with the game.
+ * These are read-only at runtime — to edit, duplicate via the admin page.
+ *
+ * Random selection and lookup logic lives in `useScenarioRepository()`,
+ * which merges these with user-created scenarios from localStorage.
+ */
+export const BUILT_IN_SCENARIOS: readonly PreBuiltScenario[] = Object.freeze([
   egyptScribe,
   athensCitizen,
   qinPeasant,
@@ -21,24 +28,8 @@ export const ALL_SCENARIOS: PreBuiltScenario[] = [
   edoRonin,
   revolutionParis,
   wwiiCivilian,
-]
+])
 
-let usedScenarioIds: string[] = []
-
-export function getRandomScenario(): PreBuiltScenario {
-  // Avoid repeating scenarios until all have been played
-  const available = ALL_SCENARIOS.filter(s => !usedScenarioIds.includes(s.id))
-  const pool = available.length > 0 ? available : ALL_SCENARIOS
-
-  if (available.length === 0) {
-    usedScenarioIds = []
-  }
-
-  const scenario = pool[Math.floor(Math.random() * pool.length)]
-  usedScenarioIds.push(scenario.id)
-  return scenario
-}
-
-export function getScenarioById(id: string): PreBuiltScenario | undefined {
-  return ALL_SCENARIOS.find(s => s.id === id)
-}
+export const BUILT_IN_SCENARIO_IDS: ReadonlySet<string> = new Set(
+  BUILT_IN_SCENARIOS.map(s => s.id),
+)

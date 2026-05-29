@@ -43,6 +43,9 @@
             <button class="btn-secondary" @click="navigateTo('/history')">
               {{ $t('history.pastLives') }}
             </button>
+            <button class="btn-secondary" @click="navigateTo('/admin')">
+              {{ $t('admin.entry') }}
+            </button>
           </div>
 
           <p v-if="!settingsStore.hasLLMKey()" class="no-key-hint">
