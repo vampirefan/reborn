@@ -16,6 +16,7 @@ export const useGameStore = defineStore('game', {
     eventHistory: [],
     turnCount: 0,
     contextSummary: '',
+    historicalNote: null,
   }),
 
   getters: {
@@ -111,6 +112,10 @@ export const useGameStore = defineStore('game', {
       this.contextSummary = summary
     },
 
+    setHistoricalNote(note: string | null) {
+      this.historicalNote = note
+    },
+
     reset() {
       this.status = 'idle'
       this.currentPlayer = null
@@ -122,6 +127,7 @@ export const useGameStore = defineStore('game', {
       this.eventHistory = []
       this.turnCount = 0
       this.contextSummary = ''
+      this.historicalNote = null
     },
 
     saveToStorage() {

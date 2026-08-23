@@ -15,6 +15,7 @@ export const egyptScribe: PreBuiltScenario = {
       countryEn: 'Egypt',
       city: '底比斯',
       cityEn: 'Thebes',
+      coordinates: { lat: 25.7188, lng: 32.6573 },
     },
     occupation: '书吏学徒',
     occupationEn: 'Scribe Apprentice',

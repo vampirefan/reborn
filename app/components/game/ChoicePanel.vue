@@ -5,11 +5,15 @@
         v-for="choice in choices"
         :key="choice.id"
         class="choice-button"
+        :class="{ 'is-historical': choice.isHistorical }"
         :disabled="disabled"
         @click="$emit('select', choice.id)"
       >
         <span class="choice-marker">&#9657;</span>
         <span class="choice-text">{{ choice.text }}</span>
+        <span v-if="choice.isHistorical" class="historical-badge" :title="$t('game.historicalTip')">
+          &#9733; {{ $t('game.historical') }}
+        </span>
       </button>
     </div>
   </Transition>
@@ -77,6 +81,28 @@ defineEmits<{
 
 .choice-text {
   flex: 1;
+}
+
+.choice-button.is-historical {
+  border-color: var(--color-accent);
+  background: linear-gradient(
+    90deg,
+    var(--color-choice-bg) 0%,
+    rgba(218, 165, 32, 0.08) 100%
+  );
+}
+
+.historical-badge {
+  flex-shrink: 0;
+  margin-left: auto;
+  padding: 0.18rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-bg-deep);
+  background: var(--color-accent);
+  border-radius: 999px;
+  white-space: nowrap;
 }
 
 .choices-slide-enter-active {

@@ -8,7 +8,7 @@ export const wwiiCivilian: PreBuiltScenario = {
     birthYear: 1920,
     era: '二战时期',
     eraEn: 'World War II Era',
-    location: { region: '东欧', regionEn: 'Eastern Europe', country: '波兰', countryEn: 'Poland', city: '华沙', cityEn: 'Warsaw' },
+    location: { region: '东欧', regionEn: 'Eastern Europe', country: '波兰', countryEn: 'Poland', city: '华沙', cityEn: 'Warsaw', coordinates: { lat: 52.2297, lng: 21.0122 } },
     occupation: '大学生',
     occupationEn: 'University Student',
     socialStatus: 'scholar',

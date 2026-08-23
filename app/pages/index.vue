@@ -37,6 +37,12 @@
             >
               {{ $t('game.newGame') }}
             </button>
+            <button
+              class="btn-primary"
+              @click="navigateTo('/play')"
+            >
+              {{ $t('map.entry') }}
+            </button>
             <button class="btn-secondary" @click="navigateTo('/settings')">
               {{ $t('settings.title') }}
             </button>
@@ -79,6 +85,17 @@
             :speed="settingsStore.textSpeed"
             @complete="showChoices = true"
           />
+
+          <!-- Historical note (after picking an isHistorical choice) -->
+          <Transition name="historical-fade">
+            <div
+              v-if="gameStore.historicalNote && showChoices"
+              class="historical-note"
+            >
+              <span class="historical-note-label">&#9733; {{ $t('knowledge.historicalNote') }}</span>
+              <span class="historical-note-text">{{ gameStore.historicalNote }}</span>
+            </div>
+          </Transition>
 
           <!-- Choices -->
           <GameChoicePanel
@@ -346,5 +363,37 @@ watch(() => gameStore.status, (status) => {
 .nav-btn:hover {
   color: var(--color-text-primary);
   border-color: var(--color-accent);
+}
+
+.historical-note {
+  margin: 1rem 0 0.25rem;
+  padding: 0.65rem 1rem;
+  border-left: 3px solid var(--color-accent);
+  background: rgba(218, 165, 32, 0.06);
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.historical-note-label {
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+.historical-note-text {
+  font-style: italic;
+}
+
+.historical-fade-enter-active {
+  transition: all 0.5s ease;
+}
+.historical-fade-enter-from {
+  opacity: 0;
+  transform: translateY(-4px);
 }
 </style>

@@ -15,6 +15,7 @@ export const qinPeasant: PreBuiltScenario = {
       countryEn: 'State of Qin',
       city: '咸阳附近村落',
       cityEn: 'Village near Xianyang',
+      coordinates: { lat: 34.3416, lng: 108.7053 },
     },
     occupation: '农夫之子',
     occupationEn: 'Farmer\'s Son',

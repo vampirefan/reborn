@@ -64,12 +64,31 @@ export function useFallbackContent() {
       id: c.id,
       text: lang === 'en' ? c.textEn : c.text,
       _nextNodeId: c.nextNodeId,
+      isHistorical: c.isHistorical,
+      historicalNote: c.historicalNote
+        ? (lang === 'en' ? c.historicalNote.textEn : c.historicalNote.text)
+        : undefined,
     }))
   }
 
-  function getSceneImageUrl(imageTag: string): string {
-    const entry = getImageByTag(imageTag)
-    return entry.path
+  function getSceneImageUrl(nodeOrTag: ScenarioNode | string): string {
+    if (typeof nodeOrTag === 'string') {
+      return getImageByTag(nodeOrTag).path
+    }
+    const tags = nodeOrTag.imageTags?.length ? nodeOrTag.imageTags : [nodeOrTag.imageTag]
+    const pick = tags[Math.floor(Math.random() * tags.length)] ?? nodeOrTag.imageTag
+    return getImageByTag(pick).path
+  }
+
+  function startScenarioLife(scenarioId: string) {
+    const scenario = repository.getById(scenarioId)
+    if (!scenario) return null
+    state.currentScenario = scenario
+    state.currentNodeId = scenario.startNodeId
+    return {
+      scenario,
+      node: scenario.nodes[scenario.startNodeId],
+    }
   }
 
   function getCurrentScenarioId(): string | null {
@@ -83,6 +102,7 @@ export function useFallbackContent() {
   return {
     shouldUseFallback,
     startFallbackLife,
+    startScenarioLife,
     resumeFallbackLife,
     advanceToNode,
     getCurrentNode,

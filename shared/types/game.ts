@@ -13,11 +13,13 @@ export interface GameState {
   eventHistory: GameEvent[]
   turnCount: number
   contextSummary: string
+  historicalNote: string | null
 }
 
 export interface Choice {
   id: string
   text: string
+  isHistorical?: boolean
 }
 
 export interface GameEvent {

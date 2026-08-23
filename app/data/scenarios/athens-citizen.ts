@@ -15,6 +15,7 @@ export const athensCitizen: PreBuiltScenario = {
       countryEn: 'Athens',
       city: '雅典',
       cityEn: 'Athens',
+      coordinates: { lat: 37.9838, lng: 23.7275 },
     },
     occupation: '陶工之子',
     occupationEn: 'Potter\'s Son',

@@ -1,10 +1,33 @@
 import type { StateMutations, NarrativeMetadata } from '~~/shared/types/narrative'
 
+export interface GeoCoordinates {
+  lat: number
+  lng: number
+}
+
 export interface ScenarioChoice {
   id: string
   text: string
   textEn: string
   nextNodeId: string
+  isHistorical?: boolean
+  historicalNote?: { text: string; textEn: string }
+}
+
+export interface ContemporaryFigure {
+  name: string
+  nameEn: string
+  role: string
+  roleEn: string
+  quote?: string
+  quoteEn?: string
+}
+
+export interface EncyclopediaEntry {
+  text: string
+  textEn: string
+  quote?: { text: string; textEn: string; author?: string; authorEn?: string }
+  contemporaries?: ContemporaryFigure[]
 }
 
 export interface ScenarioNode {
@@ -14,8 +37,9 @@ export interface ScenarioNode {
   choices: ScenarioChoice[]
   stateMutations: StateMutations
   imageTag: string
+  imageTags?: string[]
   metadata: NarrativeMetadata
-  encyclopedia?: { text: string; textEn: string }
+  encyclopedia?: EncyclopediaEntry
 }
 
 export interface ScenarioBirthInfo {
@@ -31,6 +55,7 @@ export interface ScenarioBirthInfo {
     countryEn: string
     city?: string
     cityEn?: string
+    coordinates: GeoCoordinates
   }
   occupation: string
   occupationEn: string

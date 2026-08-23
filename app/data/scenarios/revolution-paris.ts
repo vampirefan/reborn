@@ -8,7 +8,7 @@ export const revolutionParis: PreBuiltScenario = {
     birthYear: 1760,
     era: '法国大革命时期',
     eraEn: 'French Revolution Era',
-    location: { region: '西欧', regionEn: 'Western Europe', country: '法国', countryEn: 'France', city: '巴黎', cityEn: 'Paris' },
+    location: { region: '西欧', regionEn: 'Western Europe', country: '法国', countryEn: 'France', city: '巴黎', cityEn: 'Paris', coordinates: { lat: 48.8566, lng: 2.3522 } },
     occupation: '面包师之子',
     occupationEn: 'Baker\'s Son',
     socialStatus: 'artisan',

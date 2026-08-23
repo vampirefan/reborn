@@ -8,7 +8,7 @@ export const pompeiiMerchant: PreBuiltScenario = {
     birthYear: 40,
     era: '罗马帝国早期',
     eraEn: 'Early Roman Empire',
-    location: { region: '南欧', regionEn: 'Southern Europe', country: '罗马帝国', countryEn: 'Roman Empire', city: '庞贝', cityEn: 'Pompeii' },
+    location: { region: '南欧', regionEn: 'Southern Europe', country: '罗马帝国', countryEn: 'Roman Empire', city: '庞贝', cityEn: 'Pompeii', coordinates: { lat: 40.7506, lng: 14.4861 } },
     occupation: '葡萄酒商人之子',
     occupationEn: 'Wine Merchant\'s Son',
     socialStatus: 'merchant',

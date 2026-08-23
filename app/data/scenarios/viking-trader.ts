@@ -8,7 +8,7 @@ export const vikingTrader: PreBuiltScenario = {
     birthYear: 870,
     era: '维京时代',
     eraEn: 'Viking Age',
-    location: { region: '北欧', regionEn: 'Northern Europe', country: '挪威', countryEn: 'Norway', city: '卑尔根', cityEn: 'Bergen' },
+    location: { region: '北欧', regionEn: 'Northern Europe', country: '挪威', countryEn: 'Norway', city: '卑尔根', cityEn: 'Bergen', coordinates: { lat: 60.3913, lng: 5.3221 } },
     occupation: '渔民之子',
     occupationEn: 'Fisherman\'s Son',
     socialStatus: 'peasant',

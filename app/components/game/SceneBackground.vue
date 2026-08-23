@@ -1,5 +1,7 @@
 <template>
   <div class="scene-background">
+    <!-- Always-rendered placeholder ensures the screen is never fully black -->
+    <div class="scene-placeholder" />
     <Transition name="scene-fade" mode="out-in">
       <img
         v-if="currentImage"
@@ -7,8 +9,10 @@
         :src="currentImage"
         alt=""
         class="scene-image"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
       >
-      <div v-else class="scene-placeholder" />
     </Transition>
     <div v-if="loading" class="scene-loading">
       <div class="loading-shimmer" />
@@ -37,16 +41,20 @@ defineProps<{
   height: 100%;
   object-fit: cover;
   object-position: center;
+  position: absolute;
+  inset: 0;
 }
 
 .scene-placeholder {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   background: linear-gradient(
-    135deg,
-    var(--color-bg-deep) 0%,
-    var(--color-bg-mid) 50%,
-    var(--color-bg-deep) 100%
+    160deg,
+    var(--color-bg-mid) 0%,
+    var(--color-bg-deep) 50%,
+    var(--color-bg-surface, var(--color-bg-mid)) 100%
   );
   animation: gradient-shift 8s ease infinite;
   background-size: 200% 200%;

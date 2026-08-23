@@ -4,6 +4,8 @@ import { useHistoryStore } from '~/stores/historyStore'
 import { useNarrative } from '~/composables/useNarrative'
 import { useImageGen } from '~/composables/useImageGen'
 import { useFallbackContent } from '~/composables/useFallbackContent'
+import { useScenarioRepository } from '~/composables/useScenarioRepository'
+import { preloadImage } from '~/composables/usePreload'
 import { buildBirthPrompt, buildNarrativePrompt } from '~~/server/utils/prompts'
 import type { PastLife } from '~~/shared/types/history'
 import type { PlayerStats, SocialStatus } from '~~/shared/types/player'
@@ -141,8 +143,12 @@ export function useGameEngine() {
     }
   }
 
-  async function startFallbackLife() {
-    const { scenario, node } = fallback.startFallbackLife()
+  async function startFallbackLife(scenarioId?: string) {
+    const result = scenarioId
+      ? fallback.startScenarioLife(scenarioId)
+      : fallback.startFallbackLife()
+    if (!result) return
+    const { scenario, node } = result
     const lang = settingsStore.language
     const birthInfo = scenario.birthInfo
 
@@ -169,12 +175,18 @@ export function useGameEngine() {
     const choices = fallback.getNodeChoices(node, lang)
 
     gameStore.setNarrative(narrative)
-    gameStore.setChoices(choices.map(c => ({ id: c.id, text: c.text })))
+    gameStore.setChoices(choices.map(c => ({ id: c.id, text: c.text, isHistorical: c.isHistorical })))
     gameStore.setStatus('choosing')
 
-    // Set pre-built image
-    const imageUrl = fallback.getSceneImageUrl(node.imageTag)
+    // Set pre-built image (multi-tag rotation)
+    const imageUrl = fallback.getSceneImageUrl(node)
     gameStore.setImage(imageUrl)
+
+    // Preload images for all choices' next nodes so the next scene paints fast
+    for (const c of node.choices) {
+      const next = scenario.nodes[c.nextNodeId]
+      if (next) preloadImage(fallback.getSceneImageUrl(next))
+    }
 
     // Apply initial state mutations
     if (node.stateMutations.ageAdvance) {
@@ -315,12 +327,34 @@ export function useGameEngine() {
     }
 
     gameStore.setNarrative(narrative)
-    gameStore.setChoices(choices.map(c => ({ id: c.id, text: c.text })))
+    gameStore.setChoices(choices.map(c => ({ id: c.id, text: c.text, isHistorical: c.isHistorical })))
     gameStore.setStatus('choosing')
 
-    // Set pre-built image
-    const imageUrl = fallback.getSceneImageUrl(nextNode.imageTag)
+    // Set historical note for the choice just made (if any)
+    if (choiceData.historicalNote) {
+      const note = lang === 'en' ? choiceData.historicalNote.textEn : choiceData.historicalNote.text
+      gameStore.setHistoricalNote(note)
+    }
+    else {
+      gameStore.setHistoricalNote(null)
+    }
+
+    // Set pre-built image (multi-tag rotation)
+    const imageUrl = fallback.getSceneImageUrl(nextNode)
     gameStore.setImage(imageUrl)
+
+    // Preload images for next nodes
+    const scenarioId = fallback.getCurrentScenarioId()
+    if (scenarioId) {
+      const repo = useScenarioRepository()
+      const scenario = repo.getById(scenarioId)
+      if (scenario) {
+        for (const c of nextNode.choices) {
+          const upcoming = scenario.nodes[c.nextNodeId]
+          if (upcoming) preloadImage(fallback.getSceneImageUrl(upcoming))
+        }
+      }
+    }
 
     // Record event
     gameStore.addEvent({
@@ -389,8 +423,21 @@ export function useGameEngine() {
     return gameStore.loadFromStorage()
   }
 
+  async function startSelectedLife(scenarioId: string) {
+    gameStore.reset()
+    gameStore.setStatus('birth')
+    gameStore.setNarrativeLoading(true)
+    try {
+      await startFallbackLife(scenarioId)
+    }
+    finally {
+      gameStore.setNarrativeLoading(false)
+    }
+  }
+
   return {
     startNewLife,
+    startSelectedLife,
     makeChoice,
     rebirth,
     resumeGame,

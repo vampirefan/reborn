@@ -8,7 +8,7 @@ export const tangPoet: PreBuiltScenario = {
     birthYear: 720,
     era: '唐朝盛世',
     eraEn: 'Tang Dynasty Golden Age',
-    location: { region: '东亚', regionEn: 'East Asia', country: '唐朝', countryEn: 'Tang Dynasty China', city: '长安', cityEn: 'Chang\'an' },
+    location: { region: '东亚', regionEn: 'East Asia', country: '唐朝', countryEn: 'Tang Dynasty China', city: '长安', cityEn: 'Chang\'an', coordinates: { lat: 34.3416, lng: 108.9398 } },
     occupation: '书生',
     occupationEn: 'Scholar',
     socialStatus: 'scholar',

@@ -8,7 +8,7 @@ export const edoRonin: PreBuiltScenario = {
     birthYear: 1680,
     era: '江户时代中期',
     eraEn: 'Mid Edo Period',
-    location: { region: '东亚', regionEn: 'East Asia', country: '日本', countryEn: 'Japan', city: '江户', cityEn: 'Edo' },
+    location: { region: '东亚', regionEn: 'East Asia', country: '日本', countryEn: 'Japan', city: '江户', cityEn: 'Edo', coordinates: { lat: 35.6762, lng: 139.6503 } },
     occupation: '下级武士之子',
     occupationEn: 'Lower Samurai\'s Son',
     socialStatus: 'military',

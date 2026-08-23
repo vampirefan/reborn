@@ -8,7 +8,7 @@ export const aztecNoble: PreBuiltScenario = {
     birthYear: 1490,
     era: '阿兹特克帝国晚期',
     eraEn: 'Late Aztec Empire',
-    location: { region: '中美洲', regionEn: 'Mesoamerica', country: '阿兹特克帝国', countryEn: 'Aztec Empire', city: '特诺奇提特兰', cityEn: 'Tenochtitlan' },
+    location: { region: '中美洲', regionEn: 'Mesoamerica', country: '阿兹特克帝国', countryEn: 'Aztec Empire', city: '特诺奇提特兰', cityEn: 'Tenochtitlan', coordinates: { lat: 19.4326, lng: -99.1332 } },
     occupation: '贵族子弟',
     occupationEn: 'Noble Youth',
     socialStatus: 'noble',
