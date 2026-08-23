@@ -2,6 +2,9 @@
   <div class="status-hud">
     <div class="hud-row hud-top">
       <div class="hud-left">
+        <button class="hud-menu-btn" :title="$t('game.mainMenu')" @click="$emit('menu')">
+          &#9776;
+        </button>
         <span class="hud-era">{{ era }}</span>
         <span class="hud-divider">|</span>
         <span class="hud-location">{{ location }}</span>
@@ -32,6 +35,10 @@ const props = defineProps<{
   age: number
   health: number
   stats?: PlayerStats
+}>()
+
+defineEmits<{
+  menu: []
 }>()
 
 const healthClass = computed(() => {
@@ -69,6 +76,28 @@ const healthClass = computed(() => {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.hud-menu-btn {
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.hud-menu-btn:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 .hud-stats {

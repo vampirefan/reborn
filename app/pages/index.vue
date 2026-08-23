@@ -15,6 +15,7 @@
         :age="gameStore.currentPlayer.age"
         :health="gameStore.currentPlayer.health"
         :stats="gameStore.currentPlayer.stats"
+        @menu="showQuitConfirm = true"
       />
 
       <!-- Title Screen -->
@@ -126,10 +127,24 @@
         <button class="nav-btn" @click="knowledgePanelOpen = true" :title="$t('knowledge.title')">
           &#128214;
         </button>
-        <button class="nav-btn" @click="navigateTo('/settings')">
+        <button class="nav-btn" @click="navigateTo('/settings')" :title="$t('settings.title')">
           &#9881;
         </button>
       </div>
+
+      <!-- Quit to menu confirmation dialog -->
+      <Transition name="fade">
+        <div v-if="showQuitConfirm" class="confirm-overlay" @click.self="showQuitConfirm = false">
+          <div class="confirm-dialog">
+            <h3 class="confirm-title">{{ $t('game.confirmQuitTitle') }}</h3>
+            <p class="confirm-text">{{ $t('game.confirmQuit') }}</p>
+            <div class="confirm-actions">
+              <button class="btn-confirm" @click="returnToMainMenu">{{ $t('game.confirm') }}</button>
+              <button class="btn-cancel" @click="showQuitConfirm = false">{{ $t('game.cancel') }}</button>
+            </div>
+          </div>
+        </div>
+      </Transition>
 
       <!-- Knowledge Panel -->
       <GameKnowledgePanel
@@ -155,6 +170,7 @@ const showChoices = ref(false)
 const hasSavedGame = ref(false)
 const deathCause = ref('')
 const knowledgePanelOpen = ref(false)
+const showQuitConfirm = ref(false)
 
 const locationDisplay = computed(() => {
   if (!gameStore.currentPlayer) return ''
@@ -197,6 +213,14 @@ async function onRebirth() {
   deathCause.value = ''
   showChoices.value = false
   await rebirth()
+}
+
+function returnToMainMenu() {
+  showQuitConfirm.value = false
+  knowledgePanelOpen.value = false
+  showChoices.value = false
+  gameStore.saveToStorage()
+  gameStore.setStatus('idle')
 }
 
 // Track death cause from last event
@@ -337,9 +361,9 @@ watch(() => gameStore.status, (status) => {
 
 .nav-overlay {
   position: fixed;
-  top: 0.75rem;
+  top: 4.5rem;
   right: 1rem;
-  z-index: 200;
+  z-index: 150;
   display: flex;
   gap: 0.5rem;
 }
@@ -395,5 +419,89 @@ watch(() => gameStore.status, (status) => {
 .historical-fade-enter-from {
   opacity: 0;
   transform: translateY(-4px);
+}
+
+/* Confirm dialog */
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.confirm-dialog {
+  background: var(--color-bg-deep);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 360px;
+  width: 90%;
+  text-align: center;
+}
+
+.confirm-title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.confirm-text {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.btn-confirm {
+  padding: 0.6rem 1.5rem;
+  background: transparent;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.btn-confirm:hover {
+  background: var(--color-accent);
+  color: var(--color-bg-deep);
+}
+
+.btn-cancel {
+  padding: 0.6rem 1.5rem;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.btn-cancel:hover {
+  border-color: var(--color-text-secondary);
+  color: var(--color-text-primary);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

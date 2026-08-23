@@ -18,6 +18,7 @@ export const IMAGE_REGISTRY: Record<string, ImageEntry> = {
   'egypt-scribe-room': { path: `${SCENE_BASE}egypt-scribe-room.webp`, alt: '书吏的房间', altEn: 'Scribe\'s room' },
   'egypt-war': { path: `${SCENE_BASE}egypt-war.webp`, alt: '古埃及战争', altEn: 'Ancient Egyptian warfare' },
   'egypt-pyramid': { path: `${SCENE_BASE}egypt-pyramid.webp`, alt: '金字塔建设', altEn: 'Pyramid construction' },
+  'egypt-palace': { path: `${SCENE_BASE}egypt-nile.webp`, alt: '古埃及宫殿', altEn: 'Egyptian palace' },
 
   // Athens scenes
   'athens-agora': { path: `${SCENE_BASE}athens-agora.webp`, alt: '雅典广场', altEn: 'Athenian Agora' },
@@ -49,6 +50,14 @@ export const IMAGE_REGISTRY: Record<string, ImageEntry> = {
   'tang-peaceful-courtyard': { path: `${SCENE_BASE}tang-peaceful-courtyard.webp`, alt: '宁静庭院', altEn: 'Peaceful courtyard' },
   'tang-war-refugees': { path: `${SCENE_BASE}tang-war-refugees.webp`, alt: '战乱难民', altEn: 'War refugees' },
   'tang-pagoda-autumn': { path: `${SCENE_BASE}tang-pagoda-autumn.webp`, alt: '秋日大雁塔', altEn: 'Pagoda in autumn' },
+  'tang-lingnan-exile': { path: `${SCENE_BASE}tang-changan.webp`, alt: '岭南流放', altEn: 'Lingnan exile' },
+  'tang-hermit-retreat': { path: `${SCENE_BASE}tang-mountain-monastery.webp`, alt: '隐士居所', altEn: 'Hermit retreat' },
+  'tang-rebellion-news': { path: `${SCENE_BASE}tang-anlushan-rebellion.webp`, alt: '叛乱消息', altEn: 'Rebellion news' },
+  'tang-painting-studio': { path: `${SCENE_BASE}tang-poetry-gathering.webp`, alt: '画室', altEn: 'Painting studio' },
+  'tang-liberation-changan': { path: `${SCENE_BASE}tang-changan.webp`, alt: '光复长安', altEn: 'Liberation of Chang\'an' },
+  'tang-occupied-changan': { path: `${SCENE_BASE}tang-anlushan-rebellion.webp`, alt: '沦陷长安', altEn: 'Occupied Chang\'an' },
+  'tang-mountain-hermit': { path: `${SCENE_BASE}tang-mountain-monastery.webp`, alt: '山中隐士', altEn: 'Mountain hermit' },
+  'tang-prison': { path: `${SCENE_BASE}tang-anlushan-rebellion.webp`, alt: '牢狱', altEn: 'Prison' },
 
   // Viking scenes
   'viking-fjord-village': { path: `${SCENE_BASE}viking-fjord-village.webp`, alt: '峡湾村落', altEn: 'Fjord village' },
@@ -60,6 +69,15 @@ export const IMAGE_REGISTRY: Record<string, ImageEntry> = {
   'viking-ship-burial': { path: `${SCENE_BASE}viking-ship-burial.webp`, alt: '维京船葬', altEn: 'Viking ship burial' },
   'viking-great-hall': { path: `${SCENE_BASE}viking-great-hall.webp`, alt: '维京大厅', altEn: 'Viking great hall' },
   'viking-iceland-landing': { path: `${SCENE_BASE}viking-iceland-landing.webp`, alt: '冰岛登陆', altEn: 'Iceland landing' },
+  'viking-smithy': { path: `${SCENE_BASE}viking-fjord-village.webp`, alt: '铁匠铺', altEn: 'Viking smithy' },
+  'viking-tactical-approach': { path: `${SCENE_BASE}viking-longship-sea.webp`, alt: '战术接近', altEn: 'Tactical approach' },
+  'viking-manuscripts': { path: `${SCENE_BASE}viking-constantinople.webp`, alt: '手稿', altEn: 'Manuscripts' },
+  'viking-varangian-guard': { path: `${SCENE_BASE}viking-constantinople.webp`, alt: '瓦兰吉卫队', altEn: 'Varangian Guard' },
+  'viking-volga-trade': { path: `${SCENE_BASE}viking-trade-route.webp`, alt: '伏尔加贸易', altEn: 'Volga trade' },
+  'viking-ireland-coast': { path: `${SCENE_BASE}viking-longship-sea.webp`, alt: '爱尔兰海岸', altEn: 'Ireland coast' },
+  'viking-ship-repair': { path: `${SCENE_BASE}viking-fjord-village.webp`, alt: '修船', altEn: 'Ship repair' },
+  'viking-master-forge': { path: `${SCENE_BASE}viking-fjord-village.webp`, alt: '大师锻造', altEn: 'Master forge' },
+  'viking-fleet-horizon': { path: `${SCENE_BASE}viking-longship-sea.webp`, alt: '舰队地平线', altEn: 'Fleet on the horizon' },
 
   // Aztec scenes
   'aztec-tenochtitlan': { path: `${SCENE_BASE}aztec-tenochtitlan.webp`, alt: '特诺奇提特兰', altEn: 'Tenochtitlan' },
@@ -69,6 +87,15 @@ export const IMAGE_REGISTRY: Record<string, ImageEntry> = {
   'aztec-final-siege': { path: `${SCENE_BASE}aztec-final-siege.webp`, alt: '最终围城', altEn: 'Final siege' },
   'aztec-hidden-valley': { path: `${SCENE_BASE}aztec-hidden-valley.webp`, alt: '隐秘山谷', altEn: 'Hidden valley' },
   'aztec-temple-fall': { path: `${SCENE_BASE}aztec-temple-fall.webp`, alt: '神殿陷落', altEn: 'Temple fall' },
+  'aztec-merchant-journey': { path: `${SCENE_BASE}aztec-tenochtitlan.webp`, alt: '商人旅途', altEn: 'Merchant journey' },
+  'aztec-meeting-spanish': { path: `${SCENE_BASE}aztec-tenochtitlan.webp`, alt: '会见西班牙人', altEn: 'Meeting the Spanish' },
+  'aztec-hidden-codex': { path: `${SCENE_BASE}aztec-temple-priest.webp`, alt: '隐藏的手抄本', altEn: 'Hidden codex' },
+  'aztec-first-contact': { path: `${SCENE_BASE}aztec-tenochtitlan.webp`, alt: '初次接触', altEn: 'First contact' },
+  'aztec-alliance-failure': { path: `${SCENE_BASE}aztec-noche-triste.webp`, alt: '联盟失败', altEn: 'Alliance failure' },
+  'aztec-uprising': { path: `${SCENE_BASE}aztec-eagle-warrior.webp`, alt: '起义', altEn: 'Uprising' },
+  'aztec-translator': { path: `${SCENE_BASE}aztec-tenochtitlan.webp`, alt: '翻译', altEn: 'Translator' },
+  'aztec-failed-diplomacy': { path: `${SCENE_BASE}aztec-final-siege.webp`, alt: '外交失败', altEn: 'Failed diplomacy' },
+  'aztec-jungle-guerrilla': { path: `${SCENE_BASE}aztec-hidden-valley.webp`, alt: '丛林游击', altEn: 'Jungle guerrilla' },
 
   // Edo scenes
   'edo-samurai-tenement': { path: `${SCENE_BASE}edo-samurai-tenement.webp`, alt: '武士长屋', altEn: 'Samurai tenement' },
@@ -79,6 +106,15 @@ export const IMAGE_REGISTRY: Record<string, ImageEntry> = {
   'edo-tea-room': { path: `${SCENE_BASE}edo-tea-room.webp`, alt: '茶室', altEn: 'Tea room' },
   'edo-mountain-village': { path: `${SCENE_BASE}edo-mountain-village.webp`, alt: '山间村落', altEn: 'Mountain village' },
   'edo-tokaido-road': { path: `${SCENE_BASE}edo-tokaido-road.webp`, alt: '东海道', altEn: 'Tokaido road' },
+  'edo-study-room': { path: `${SCENE_BASE}edo-samurai-tenement.webp`, alt: '书房', altEn: 'Study room' },
+  'edo-merchant-district': { path: `${SCENE_BASE}edo-samurai-tenement.webp`, alt: '商人区', altEn: 'Merchant district' },
+  'edo-shogun-audience': { path: `${SCENE_BASE}edo-samurai-tenement.webp`, alt: '将军谒见', altEn: 'Shogun audience' },
+  'edo-rangaku-study': { path: `${SCENE_BASE}edo-samurai-tenement.webp`, alt: '兰学书房', altEn: 'Rangaku study' },
+  'edo-private-school': { path: `${SCENE_BASE}edo-dojo.webp`, alt: '私塾', altEn: 'Private school' },
+  'edo-rice-market': { path: `${SCENE_BASE}edo-samurai-tenement.webp`, alt: '米市', altEn: 'Rice market' },
+  'edo-night-confrontation': { path: `${SCENE_BASE}edo-night-rescue.webp`, alt: '夜间对峙', altEn: 'Night confrontation' },
+  'edo-reform-office': { path: `${SCENE_BASE}edo-samurai-tenement.webp`, alt: '改革奉行所', altEn: 'Reform office' },
+  'edo-charity-work': { path: `${SCENE_BASE}edo-samurai-tenement.webp`, alt: '慈善事业', altEn: 'Charity work' },
 
   // Revolution scenes
   'revolution-paris-streets': { path: `${SCENE_BASE}revolution-paris-streets.webp`, alt: '巴黎街头', altEn: 'Paris streets' },
@@ -87,6 +123,20 @@ export const IMAGE_REGISTRY: Record<string, ImageEntry> = {
   'revolution-guillotine': { path: `${SCENE_BASE}revolution-guillotine.webp`, alt: '断头台', altEn: 'The guillotine' },
   'revolution-napoleon-coronation': { path: `${SCENE_BASE}revolution-napoleon-coronation.webp`, alt: '拿破仑加冕', altEn: 'Napoleon\'s coronation' },
   'revolution-bakery-peace': { path: `${SCENE_BASE}revolution-bakery-peace.webp`, alt: '和平的面包房', altEn: 'Peaceful bakery' },
+  'revolution-bread-shortage': { path: `${SCENE_BASE}revolution-paris-streets.webp`, alt: '面包短缺', altEn: 'Bread shortage' },
+  'revolution-national-guard': { path: `${SCENE_BASE}revolution-paris-streets.webp`, alt: '国民自卫军', altEn: 'National Guard' },
+  'revolution-newspaper': { path: `${SCENE_BASE}revolution-paris-streets.webp`, alt: '革命报纸', altEn: 'Revolution newspaper' },
+  'revolution-bakery': { path: `${SCENE_BASE}revolution-paris-streets.webp`, alt: '面包房', altEn: 'Bakery' },
+  'revolution-tribunal': { path: `${SCENE_BASE}revolution-guillotine.webp`, alt: '革命法庭', altEn: 'Revolutionary Tribunal' },
+  'revolution-moderate-danger': { path: `${SCENE_BASE}revolution-paris-streets.webp`, alt: '温和派的危险', altEn: 'Moderate danger' },
+  'revolution-sans-culottes': { path: `${SCENE_BASE}revolution-bastille.webp`, alt: '无套裤汉', altEn: 'Sans-culottes' },
+  'revolution-terror': { path: `${SCENE_BASE}revolution-guillotine.webp`, alt: '恐怖统治', altEn: 'The Terror' },
+  'revolution-thermidor': { path: `${SCENE_BASE}revolution-paris-streets.webp`, alt: '热月政变', altEn: 'Thermidorian Reaction' },
+  'revolution-thermidor-plot': { path: `${SCENE_BASE}revolution-paris-streets.webp`, alt: '热月阴谋', altEn: 'Thermidorian plot' },
+  'revolution-underground': { path: `${SCENE_BASE}revolution-paris-streets.webp`, alt: '地下救援', altEn: 'Underground rescue' },
+  'revolution-aftermath': { path: `${SCENE_BASE}revolution-paris-streets.webp`, alt: '革命余波', altEn: 'Revolution aftermath' },
+  'revolution-exile-london': { path: `${SCENE_BASE}default-scene.webp`, alt: '伦敦流亡', altEn: 'Exile in London' },
+  'revolution-exile-remorse': { path: `${SCENE_BASE}default-scene.webp`, alt: '流亡悔恨', altEn: 'Exile remorse' },
 
   // WWII scenes
   'wwii-warsaw-bombing': { path: `${SCENE_BASE}wwii-warsaw-bombing.webp`, alt: '华沙轰炸', altEn: 'Warsaw bombing' },
@@ -97,8 +147,20 @@ export const IMAGE_REGISTRY: Record<string, ImageEntry> = {
   'wwii-rebuild-warsaw': { path: `${SCENE_BASE}wwii-rebuild-warsaw.webp`, alt: '重建华沙', altEn: 'Rebuilding Warsaw' },
   'wwii-sewer-escape': { path: `${SCENE_BASE}wwii-sewer-escape.webp`, alt: '下水道逃生', altEn: 'Sewer escape' },
   'wwii-underground-press': { path: `${SCENE_BASE}wwii-underground-press.webp`, alt: '地下出版', altEn: 'Underground press' },
+  'wwii-underground-class': { path: `${SCENE_BASE}wwii-resistance-meeting.webp`, alt: '地下大学', altEn: 'Underground class' },
+  'wwii-radio-operator': { path: `${SCENE_BASE}wwii-resistance-meeting.webp`, alt: '无线电操作员', altEn: 'Radio operator' },
+  'wwii-ghetto-rescue': { path: `${SCENE_BASE}wwii-ghetto-wall.webp`, alt: '隔都救援', altEn: 'Ghetto rescue' },
+  'wwii-hidden-families': { path: `${SCENE_BASE}wwii-ghetto-wall.webp`, alt: '藏匿家庭', altEn: 'Hidden families' },
+  'wwii-pow-camp': { path: `${SCENE_BASE}wwii-warsaw-uprising.webp`, alt: '战俘营', altEn: 'POW camp' },
+  'wwii-soviet-liberation': { path: `${SCENE_BASE}wwii-liberation.webp`, alt: '苏联解放', altEn: 'Soviet liberation' },
+  'wwii-arrest': { path: `${SCENE_BASE}wwii-ghetto-wall.webp`, alt: '逮捕', altEn: 'Arrest' },
+  'wwii-exile-new-york': { path: `${SCENE_BASE}default-scene.webp`, alt: '流亡纽约', altEn: 'Exile in New York' },
+  'wwii-writer-memoir': { path: `${SCENE_BASE}wwii-underground-press.webp`, alt: '作家回忆录', altEn: 'Writer memoir' },
+  'wwii-ship-hope': { path: `${SCENE_BASE}wwii-liberation.webp`, alt: '希望之船', altEn: 'Ship of hope' },
 
   // Generic fallback
+  'generic-night': { path: `${SCENE_BASE}default-scene.webp`, alt: '夜晚', altEn: 'Night' },
+  'generic-dawn': { path: `${SCENE_BASE}default-scene.webp`, alt: '黎明', altEn: 'Dawn' },
   'default': { path: `${SCENE_BASE}default-scene.webp`, alt: '历史场景', altEn: 'Historical scene' },
 }
 

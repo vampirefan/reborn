@@ -6,6 +6,11 @@
     "continue": "继续旅程",
     "rebirth": "再入轮回",
     "back": "返回",
+    "mainMenu": "主菜单",
+    "confirmQuit": "返回主菜单？当前进度已自动保存。",
+    "confirmQuitTitle": "返回主菜单",
+    "confirm": "确定",
+    "cancel": "取消",
     "events": "事件",
     "clickToContinue": "点击继续"
   },
@@ -76,7 +81,11 @@
     "event": "历史事件",
     "npcsMet": "遇见",
     "noEncyclopedia": "详细历史背景仅在预置剧本中可用",
-    "journeyBegins": "你的旅程刚刚开始..."
+    "journeyBegins": "你的旅程刚刚开始...",
+    "historicalNote": "历史注记"
+  },
+  "map": {
+    "entry": "历史地图"
   },
   "admin": {
     "title": "剧本管理",

@@ -6,6 +6,11 @@
     "continue": "Continue",
     "rebirth": "Enter the Cycle Anew",
     "back": "Back",
+    "mainMenu": "Main Menu",
+    "confirmQuit": "Return to main menu? Your progress has been auto-saved.",
+    "confirmQuitTitle": "Return to Main Menu",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
     "events": "Events",
     "clickToContinue": "Click to continue"
   },
@@ -76,7 +81,11 @@
     "event": "Historical Event",
     "npcsMet": "Met",
     "noEncyclopedia": "Detailed background available in pre-built scenarios",
-    "journeyBegins": "Your journey has just begun..."
+    "journeyBegins": "Your journey has just begun...",
+    "historicalNote": "Historical Note"
+  },
+  "map": {
+    "entry": "History Map"
   },
   "admin": {
     "title": "Scenario Admin",

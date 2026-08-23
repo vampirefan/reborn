@@ -36,7 +36,7 @@ export const qinPeasant: PreBuiltScenario = {
         { id: 'c3', text: '偷偷向村里唯一识字的老人学认字', textEn: 'Secretly learn to read from the village\'s only literate elder', nextNodeId: 'literacy_path' },
       ],
       stateMutations: { ageAdvance: 0 },
-      imageTag: 'china-qin-village',
+      imageTag: 'qin-village',
       metadata: { year: -240, historicalEvent: '秦王嬴政即位初期，统一战争即将开始' },
       encyclopedia: {
         text: '商鞅变法（前356年起）彻底改造了秦国社会：废除世卿世禄，实行军功爵制（二十等爵），编户齐民，连坐法严格控制人口。秦王嬴政（前259-前210）于前246年13岁即位，前230年起发动灭六国战争。咸阳是当时世界上规模最大的城市之一，人口估计30-50万。秦国农民承担田租（十分之一）、口赋（人头税）和徭役（每年一月）三重负担。',
@@ -52,7 +52,7 @@ export const qinPeasant: PreBuiltScenario = {
         { id: 'c2', text: '用获得的田地退役，回家务农', textEn: 'Use the granted land to retire and return to farming', nextNodeId: 'returned_soldier' },
       ],
       stateMutations: { ageAdvance: 11, occupationChange: '秦军步兵', healthChange: -10, newTrait: '勇武', statChanges: { body: 2, luck: -1 } },
-      imageTag: 'china-qin-wall',
+      imageTag: 'qin-wall',
       metadata: { year: -229, historicalEvent: '秦灭赵之战' },
       encyclopedia: {
         text: '秦国军功爵制规定：斩获敌首一级可升一爵，授田一顷、宅一处，赐仆人一名。二十等爵从"公士"到"彻侯"，普通士兵最高可升至第八级"公乘"。长平之战（前260年）秦将白起坑杀赵军降卒40万。秦灭赵之战（前229-前228）由王翦率60万大军完成，是统一六国中规模最大的战役之一。',
@@ -68,7 +68,7 @@ export const qinPeasant: PreBuiltScenario = {
         { id: 'c2', text: '冒着死罪的风险逃役', textEn: 'Risk the death penalty by fleeing conscription', nextNodeId: 'fugitive' },
       ],
       stateMutations: { ageAdvance: 25, newRelationship: { name: '阿芸', role: '妻子' } },
-      imageTag: 'china-qin-village',
+      imageTag: 'qin-village',
       metadata: { year: -215, historicalEvent: '秦始皇统一六国后开始修建长城和驰道' },
       encyclopedia: {
         text: '秦始皇统一后发动了规模空前的基础设施建设：修筑万里长城连接北方旧墙，耗用民力百万；建设驰道（高速公路），宽50步，直达帝国各地；开凿灵渠连接长江与珠江水系。这些工程征发了全国约六分之一的成年男性劳力。里耶秦简出土证实，服役者死亡率极高，逃亡者全家连坐处死。',
@@ -84,7 +84,7 @@ export const qinPeasant: PreBuiltScenario = {
         { id: 'c2', text: '婉拒，害怕识字反而带来灾祸', textEn: 'Politely decline, fearing literacy may bring disaster', nextNodeId: 'farmer_life' },
       ],
       stateMutations: { ageAdvance: 15, newTrait: '识字', statChanges: { mind: 2, charisma: 1 } },
-      imageTag: 'china-qin-village',
+      imageTag: 'qin-village',
       metadata: { year: -225, historicalEvent: '焚书坑儒政策推行' },
       encyclopedia: {
         text: '"焚书"（前213年）由丞相李斯建议：除秦国史书、医药、卜筮、农书外，民间私藏的《诗》《书》及百家著作限期交官焚毁。"坑儒"（前212年）实为坑杀四百余名方士术士，并非单纯的儒生。秦国文字统一为小篆（后简化为隶书），度量衡统一，"车同轨、书同文"。识字在秦代是进入官僚系统的关键技能，小吏需通过文字考核方可任职。',
@@ -100,7 +100,7 @@ export const qinPeasant: PreBuiltScenario = {
         { id: 'c2', text: '功成身退，回乡享受田产', textEn: 'Retire with honors and return home to enjoy your land', nextNodeId: 'returned_soldier' },
       ],
       stateMutations: { ageAdvance: 10, healthChange: -20, occupationChange: '屯长' },
-      imageTag: 'china-qin-wall',
+      imageTag: 'qin-wall',
       metadata: { year: -221, historicalEvent: '秦灭六国，天下一统' },
       encyclopedia: {
         text: '秦灭六国（前230-前221）的顺序为：韩、赵、魏、楚、燕、齐。统一战争中秦军总兵力约百万，名将王翦率60万灭楚是最大规模战役。前221年秦王嬴政称"始皇帝"，废分封、行郡县，建立了中国历史上第一个中央集权大一统帝国。全国分36郡，统一文字、货币、度量衡。秦帝国疆域北至长城、南至南海，人口约2000万。然而秦朝仅持续15年（前221-前206）便在大规模起义中崩溃。',
@@ -116,7 +116,7 @@ export const qinPeasant: PreBuiltScenario = {
         { id: 'c2', text: '心中积怨，等待反秦的机会', textEn: 'Nurse resentment and wait for a chance to resist Qin', nextNodeId: 'rebellion_seed' },
       ],
       stateMutations: { ageAdvance: 3, healthChange: -30 },
-      imageTag: 'china-qin-wall',
+      imageTag: 'qin-wall',
       metadata: { year: -212, historicalEvent: '万里长城修建，无数民夫死于工程' },
     },
     fugitive: {
@@ -128,7 +128,7 @@ export const qinPeasant: PreBuiltScenario = {
         { id: 'c2', text: '继续隐居，等待局势明朗', textEn: 'Continue hiding and wait for clarity', nextNodeId: 'peasant_autumn' },
       ],
       stateMutations: { ageAdvance: 4, healthChange: -15, locationChange: '深山中' },
-      imageTag: 'china-qin-village',
+      imageTag: 'qin-village',
       metadata: { year: -210, historicalEvent: '秦始皇驾崩于巡游途中' },
     },
     clerk_life: {
@@ -140,7 +140,7 @@ export const qinPeasant: PreBuiltScenario = {
         { id: 'c2', text: '暗中放走几个贫困的逃役者', textEn: 'Secretly release a few impoverished conscription fugitives', nextNodeId: 'merciful_clerk' },
       ],
       stateMutations: { ageAdvance: 10, occupationChange: '县衙令史', statChanges: { mind: 2 } },
-      imageTag: 'china-qin-village',
+      imageTag: 'qin-village',
       metadata: { year: -215, historicalEvent: '秦始皇大兴土木，民力耗尽' },
     },
     northern_border: {
@@ -152,7 +152,7 @@ export const qinPeasant: PreBuiltScenario = {
         { id: 'c2', text: '留守边关直到最后', textEn: 'Hold the border to the very end', nextNodeId: 'border_death' },
       ],
       stateMutations: { ageAdvance: 10, healthChange: -25, locationChange: '北方边境' },
-      imageTag: 'china-qin-wall',
+      imageTag: 'qin-wall',
       metadata: { year: -210, historicalEvent: '秦始皇死，蒙恬被赐死，帝国开始崩溃' },
     },
     returned_soldier: {
@@ -164,7 +164,7 @@ export const qinPeasant: PreBuiltScenario = {
         { id: 'c2', text: '加入刘邦的起义军', textEn: 'Join Liu Bang\'s rebellion', nextNodeId: 'rebel_life' },
       ],
       stateMutations: { ageAdvance: 8, newRelationship: { name: '秀娘', role: '妻子' } },
-      imageTag: 'china-qin-village',
+      imageTag: 'qin-village',
       metadata: { year: -209, historicalEvent: '陈胜吴广起义，秦末大乱' },
     },
     rebel_life: {
@@ -176,7 +176,7 @@ export const qinPeasant: PreBuiltScenario = {
         { id: 'c2', text: '在战场上力战而亡', textEn: 'Fight to the death on the battlefield', nextNodeId: 'battle_death' },
       ],
       stateMutations: { ageAdvance: 8, healthChange: -20 },
-      imageTag: 'china-qin-wall',
+      imageTag: 'qin-wall',
       metadata: { year: -206, historicalEvent: '楚汉相争' },
     },
     peasant_autumn: {
@@ -185,7 +185,7 @@ export const qinPeasant: PreBuiltScenario = {
       narrativeEn: 'You return to ordinary life. The field is small but feeds the family. You witness Qin\'s fall and Han\'s rise. The new dynasty brings slightly lighter taxes and less forced labor. Your children grow up and start families of their own. In autumn of your sixty-fifth year, after harvesting the last rice, you sit on the field ridge to rest. The setting sun turns the wheat waves golden. You think of everything you\'ve endured — war, suffering, peace. Then you close your eyes.',
       choices: [],
       stateMutations: { ageAdvance: 20, healthChange: -40 },
-      imageTag: 'china-qin-village',
+      imageTag: 'qin-village',
       metadata: { year: -195, isDeath: true, causeOfDeath: '在秋收后于田间安然辞世' },
     },
     rebellion_seed: {
@@ -197,7 +197,7 @@ export const qinPeasant: PreBuiltScenario = {
         { id: 'c2', text: '让同伴带你回家，见妻儿最后一面', textEn: 'Ask comrades to take you home to see your family one last time', nextNodeId: 'homecoming_death' },
       ],
       stateMutations: { ageAdvance: 3, healthChange: -40 },
-      imageTag: 'china-qin-wall',
+      imageTag: 'qin-wall',
       metadata: { year: -209, historicalEvent: '陈胜吴广大泽乡起义' },
     },
     loyal_official: {
@@ -209,7 +209,7 @@ export const qinPeasant: PreBuiltScenario = {
         { id: 'c2', text: '以身殉职，死守城池', textEn: 'Die at your post, defending the city', nextNodeId: 'duty_death' },
       ],
       stateMutations: { ageAdvance: 15, occupationChange: '县丞', statChanges: { mind: 1, charisma: 1 } },
-      imageTag: 'china-qin-village',
+      imageTag: 'qin-village',
       metadata: { year: -209, historicalEvent: '秦末起义军席卷各地' },
     },
     merciful_clerk: {
@@ -221,7 +221,7 @@ export const qinPeasant: PreBuiltScenario = {
         { id: 'c2', text: '回归平民，隐姓埋名', textEn: 'Return to civilian life under a false name', nextNodeId: 'peasant_autumn' },
       ],
       stateMutations: { ageAdvance: 5, healthChange: -10, newTrait: '仁慈' },
-      imageTag: 'china-qin-village',
+      imageTag: 'qin-village',
       metadata: { year: -209, historicalEvent: '秦法严酷下的小人物命运' },
     },
     village_defense: {
@@ -230,7 +230,7 @@ export const qinPeasant: PreBuiltScenario = {
       narrativeEn: 'You use military knowledge to organize villagers — digging trenches, setting barriers, rotating patrols. Your village becomes a rare safe haven in the chaos. Refugees pour in, and your "village fort" grows. You become a local leader — not from ambition, but because people need you. Liu Bang eventually unifies the realm and establishes the Han Dynasty. The new court acknowledges your contribution to local stability, granting you an official village position. You live to seventy, watching the realm finally find peace. On your deathbed you tell your son: "I have killed and saved in this life. May you only need to do the latter."',
       choices: [],
       stateMutations: { ageAdvance: 25, healthChange: -30 },
-      imageTag: 'china-qin-village',
+      imageTag: 'qin-village',
       metadata: { year: -195, isDeath: true, causeOfDeath: '七十岁时在家中安详辞世，见证了从秦到汉的时代更替' },
     },
     homeward: {
@@ -239,7 +239,7 @@ export const qinPeasant: PreBuiltScenario = {
       narrativeEn: 'You lead twenty veterans southward. The roads are filled with deserters and refugees. Discipline and experience help you avoid most danger. Two months later you reach home — but home is gone. Your village was burned in the fighting; your wife and children have vanished. You search frantically, finally finding them in a refugee camp. Your wife is gaunt beyond recognition, but alive. You hold her tight, weeping. You rebuild your home from the ruins and spend your final years in the peace of the Han Dynasty.',
       choices: [],
       stateMutations: { ageAdvance: 20, healthChange: -30 },
-      imageTag: 'china-qin-village',
+      imageTag: 'qin-village',
       metadata: { year: -195, isDeath: true, causeOfDeath: '在重建的家园中老去，六十五岁自然辞世' },
     },
     border_death: {
@@ -248,7 +248,7 @@ export const qinPeasant: PreBuiltScenario = {
       narrativeEn: 'You choose to stay. Your orders are to guard the border, and guard you will. But as the court collapses, supplies stop. Food dwindles daily; soldiers desert. Finally only you and three old comrades who refuse to leave remain. One winter night, the Xiongnu cross an unguarded section of wall. You raise your rusted sword to meet them. The fight lasts only moments. Lying in the snow, you look up at the stars and think: perhaps the realm already has a new master.',
       choices: [],
       stateMutations: { ageAdvance: 2, healthChange: -100 },
-      imageTag: 'china-qin-wall',
+      imageTag: 'qin-wall',
       metadata: { year: -208, isDeath: true, causeOfDeath: '匈奴突袭中战死于长城上' },
     },
     survive_chaos: {
@@ -257,7 +257,7 @@ export const qinPeasant: PreBuiltScenario = {
       narrativeEn: 'You fight free of the encirclement with three new wounds. The war ends with Liu Bang\'s victory. As a veteran of merit you receive some reward — not much, but enough for your remaining years. You return to your homeland, the soil you left over a decade ago. Everything has changed, but the land remains. You pick up a hoe and begin to farm. At fifty-five you collapse in the field — not from battle, but from years of old wounds catching up. Your last thought: this land is finally at peace.',
       choices: [],
       stateMutations: { ageAdvance: 10, healthChange: -60 },
-      imageTag: 'china-qin-village',
+      imageTag: 'qin-village',
       metadata: { year: -200, isDeath: true, causeOfDeath: '多年旧伤复发，在田间劳作时倒下' },
     },
     battle_death: {
@@ -266,7 +266,7 @@ export const qinPeasant: PreBuiltScenario = {
       narrativeEn: 'The battlefield flashes with steel. You swing your blade until your arm can no longer rise. A spear pierces your chest. You fall onto muddy ground, among countless others who have fallen. As consciousness fades, you seem to see the lamplight of home, your wife\'s face, your children\'s laughter. "I\'m sorry..." you murmur. Blood soaks the yellow earth. Another nameless soul vanishes in history\'s flood.',
       choices: [],
       stateMutations: { ageAdvance: 0, healthChange: -100 },
-      imageTag: 'china-qin-wall',
+      imageTag: 'qin-wall',
       metadata: { year: -207, isDeath: true, causeOfDeath: '战死沙场' },
     },
     homecoming_death: {
@@ -275,7 +275,7 @@ export const qinPeasant: PreBuiltScenario = {
       narrativeEn: 'Comrades take turns carrying you for three days. Fever from the infection climbs unabated; consciousness fades. On the fourth evening, you see the old pagoda tree at the village entrance. "We\'re... home..." you manage. Your wife runs out, but you can no longer speak. She holds your hand, tears falling on your face. You look one last time at the land that bore and raised you, at the person you love most, then close your eyes forever. You are forty. An ordinary life in extraordinary times.',
       choices: [],
       stateMutations: { ageAdvance: 0, healthChange: -100 },
-      imageTag: 'china-qin-village',
+      imageTag: 'qin-village',
       metadata: { year: -209, isDeath: true, causeOfDeath: '伤口感染，在回家途中去世' },
     },
     surrender_fate: {
@@ -284,7 +284,7 @@ export const qinPeasant: PreBuiltScenario = {
       narrativeEn: 'You open the gates. Rebels pour in, but their leader sees you surrendered willingly and spares the people. As a former Qin official you are imprisoned briefly, then recruited by the new regime for your administrative skills. You serve in Han local government until retirement at sixty. The proudest moment of your life: the day you opened those gates and saved everyone inside.',
       choices: [],
       stateMutations: { ageAdvance: 20, healthChange: -30 },
-      imageTag: 'china-qin-village',
+      imageTag: 'qin-village',
       metadata: { year: -195, isDeath: true, causeOfDeath: '六十岁退休后自然老去' },
     },
     duty_death: {
@@ -293,7 +293,7 @@ export const qinPeasant: PreBuiltScenario = {
       narrativeEn: 'You climb the city wall, facing the dark mass outside. You know resistance is meaningless, but this is your duty as an official. You draw your sword — never truly used in all your years — facing north, toward Xianyang. "Your servant... has been loyal," you whisper. When the first rebels scale the wall, you do not retreat a single step. You die on the wall you swore to defend. The irony: the empire you served no longer exists.',
       choices: [],
       stateMutations: { ageAdvance: 0, healthChange: -100 },
-      imageTag: 'china-qin-wall',
+      imageTag: 'qin-wall',
       metadata: { year: -209, isDeath: true, causeOfDeath: '以身殉职，死守城池' },
     },
   },
