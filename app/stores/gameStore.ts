@@ -155,6 +155,22 @@ export const useGameStore = defineStore('game', {
       return false
     },
 
+    hasSave(): boolean {
+      if (import.meta.client) {
+        const stored = localStorage.getItem(STORAGE_KEY)
+        if (stored) {
+          try {
+            const parsed = JSON.parse(stored)
+            return !!parsed.currentPlayer
+          }
+          catch {
+            return false
+          }
+        }
+      }
+      return false
+    },
+
     clearSave() {
       if (import.meta.client) {
         localStorage.removeItem(STORAGE_KEY)

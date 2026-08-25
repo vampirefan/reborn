@@ -163,7 +163,7 @@ import { usePersistence } from '~/composables/usePersistence'
 
 const gameStore = useGameStore()
 const settingsStore = useSettingsStore()
-const { startNewLife, makeChoice, rebirth, resumeGame: resumeFromStorage } = useGameEngine()
+const { startNewLife, startSelectedLife, makeChoice, rebirth, resumeGame: resumeFromStorage } = useGameEngine()
 const { initializeAll } = usePersistence()
 
 const showChoices = ref(false)
@@ -178,20 +178,29 @@ const locationDisplay = computed(() => {
   return [loc.city, loc.country].filter(Boolean).join(', ')
 })
 
-onMounted(() => {
+onMounted(async () => {
   initializeAll()
 
-  // If game is already active, we're returning from settings/history navigation
+  // Check if we're coming from the map with a scenario selection
+  const route = useRoute()
+  const scenarioId = route.query.scenario as string | null
+  if (scenarioId && gameStore.status === 'idle') {
+    await startSelectedLife(scenarioId)
+    // Clean up the URL
+    navigateTo('/', { replace: true })
+    return
+  }
+
+  // If game is already active in memory (SPA back-navigation from settings/history), keep it
   if (gameStore.status !== 'idle') {
     hasSavedGame.value = true
     return
   }
 
-  // Only on genuine first load
-  hasSavedGame.value = gameStore.loadFromStorage()
-  if (!hasSavedGame.value) {
-    gameStore.setStatus('idle')
-  }
+  // Fresh page load (refresh): always show the title screen.
+  // Only check whether a save exists — restore it when the user clicks "继续旅程".
+  hasSavedGame.value = gameStore.hasSave()
+  gameStore.setStatus('idle')
 })
 
 async function startNew() {
@@ -200,8 +209,10 @@ async function startNew() {
 }
 
 function resumeGame() {
-  // Already loaded from storage in onMounted
-  showChoices.value = true
+  // Load the saved game on explicit user action
+  if (gameStore.loadFromStorage()) {
+    showChoices.value = true
+  }
 }
 
 async function onChoice(choiceId: string) {

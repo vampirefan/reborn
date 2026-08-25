@@ -85,7 +85,21 @@
     "historicalNote": "历史注记"
   },
   "map": {
-    "entry": "历史地图"
+    "entry": "历史地图",
+    "subtitle": "穿越时空，探索历史",
+    "timeline": "时间线",
+    "era": "时代",
+    "location": "地点",
+    "character": "人物",
+    "occupation": "职业",
+    "birthYear": "出生年份",
+    "startJourney": "开启旅程",
+    "close": "关闭",
+    "allEras": "全部",
+    "scenarios": "个剧本",
+    "bcSuffix": "公元前",
+    "adSuffix": "公元",
+    "region": "区域"
   },
   "admin": {
     "title": "剧本管理",

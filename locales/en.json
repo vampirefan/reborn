@@ -85,7 +85,21 @@
     "historicalNote": "Historical Note"
   },
   "map": {
-    "entry": "History Map"
+    "entry": "History Map",
+    "subtitle": "Traverse time, explore history",
+    "timeline": "Timeline",
+    "era": "Era",
+    "location": "Location",
+    "character": "Character",
+    "occupation": "Occupation",
+    "birthYear": "Birth Year",
+    "startJourney": "Begin Journey",
+    "close": "Close",
+    "allEras": "All",
+    "scenarios": "scenarios",
+    "bcSuffix": "BC",
+    "adSuffix": "AD",
+    "region": "Region"
   },
   "admin": {
     "title": "Scenario Admin",
